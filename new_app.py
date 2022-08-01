@@ -12,18 +12,18 @@ from pycaret.datasets import get_data
 st.set_page_config(layout = 'wide')
 plt.style.use('seaborn')
 
-@st.experimental_memo
+@st.cache
 def load_dataset():
 	file_path = './data/diabetes_012_health_indicators_BRFSS2015.csv'
 	df = pd.read_csv(file_path)
 	df = df.astype(int)
 	return df
 
-@st.experimental_memo	
+@st.cache	
 def load_model_lgbm():
     return load_model('./data/modelo_lightgbm_binário_FS.pkl')
 
-@st.experimental_memo	
+@st.cache	
 def load_model_config():
 	return load_config('./data/my_config_feature_selected')	
 
