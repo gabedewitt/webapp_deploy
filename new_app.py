@@ -19,7 +19,7 @@ def load_dataset():
 	df = df.astype(int)
 	return df
 
-@st.cache	
+@st.cache(allow_output_mutation=True)	
 def load_model_lgbm():
     return load_model('./data/modelo_lightgbm_binário_FS')
 
