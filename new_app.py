@@ -21,7 +21,7 @@ def load_dataset():
 
 @st.cache	
 def load_model_lgbm():
-    return load_model('./data/modelo_lightgbm_binário_FS.pkl')
+    return load_model('./data/modelo_lightgbm_binário_FS')
 
 @st.cache	
 def load_model_config():
