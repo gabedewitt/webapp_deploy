@@ -29,12 +29,14 @@ def load_model_config():
 
 @st.cache
 def plot_graphs(model):
-	plot_model(model._final_estimator, plot = 'class_report', display_format='streamlit', plot_kwargs = {'percent' : True})		
-	plot_model(model._final_estimator, plot = 'boundary', display_format='streamlit', plot_kwargs = {'percent' : True})	
-	plot_model(model._final_estimator, plot = 'confusion_matrix', display_format='streamlit', plot_kwargs = {'percent' : True})	
-	plot_model(model._final_estimator, plot = 'auc', display_format='streamlit', plot_kwargs = {'percent' : True})				
-	plot_model(model._final_estimator, plot = 'feature_all', display_format='streamlit', plot_kwargs = {'percent' : True})
-	
+	return [
+	plot_model(model._final_estimator, plot = 'class_report', display_format='streamlit', plot_kwargs = {'percent' : True})	        ,  
+	plot_model(model._final_estimator, plot = 'boundary', display_format='streamlit', plot_kwargs = {'percent' : True})	        , 
+	plot_model(model._final_estimator, plot = 'confusion_matrix', display_format='streamlit', plot_kwargs = {'percent' : True})	,
+	plot_model(model._final_estimator, plot = 'auc', display_format='streamlit', plot_kwargs = {'percent' : True})			,	
+	plot_model(model._final_estimator, plot = 'feature_all', display_format='streamlit', plot_kwargs = {'percent' : True})          ,
+	]
+
 def prediction(value, df_pred):
 	array = model.predict(df_pred)
 	if value == True:
