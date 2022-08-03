@@ -33,10 +33,6 @@ def load_model_lgbm():
 def load_model_config():
 	return load_config('./data/my_config_feature_selected')	
 
-@st.cache(suppress_st_warning=True)
-def plot_boundary(model):
-	plot_model(model._final_estimator, plot = 'boundary', display_format='streamlit', plot_kwargs = {'percent' : True})
-
 def prediction(value, df_pred):
 	array = model.predict(df_pred)
 	if value == True:
@@ -97,7 +93,6 @@ elif options == 'Model Metrics':
 		plot_model(model._final_estimator, plot = 'confusion_matrix', display_format='streamlit', plot_kwargs = {'percent' : True})
 		plot_model(model._final_estimator, plot = 'auc', display_format='streamlit', plot_kwargs = {'percent' : True})	
 		plot_model(model._final_estimator, plot = 'feature_all', display_format='streamlit', plot_kwargs = {'percent' : True})
-		plot_boundary(model)
 
 else:
 
