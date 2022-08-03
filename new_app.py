@@ -12,7 +12,6 @@ from pycaret.datasets import get_data
 st.set_page_config(layout = 'wide')
 plt.style.use('seaborn')
 
-[theme]
 primaryColor="#F63366"
 backgroundColor="#FFFFFF"
 secondaryBackgroundColor="#F0F2F6"
