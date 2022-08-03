@@ -33,7 +33,7 @@ def load_model_lgbm():
 def load_model_config():
 	return load_config('./data/my_config_feature_selected')	
 
-@st.cache
+@st.cache(suppress_st_warning=True)
 def plot_boundary(model):
 	plot_model(model._final_estimator, plot = 'boundary', display_format='streamlit', plot_kwargs = {'percent' : True})
 
