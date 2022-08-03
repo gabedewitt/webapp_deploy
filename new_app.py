@@ -35,7 +35,7 @@ def load_model_config():
 
 @st.cache
 def plot_boundary(model):
-	return plot_model(model._final_estimator, plot = 'boundary', display_format='streamlit', plot_kwargs = {'percent' : True})
+	plot_model(model._final_estimator, plot = 'boundary', display_format='streamlit', plot_kwargs = {'percent' : True})
 
 def prediction(value, df_pred):
 	array = model.predict(df_pred)
