@@ -88,7 +88,7 @@ The *Behavioral Risk Factor Surveillance System* (BRFSS) is a health-related tel
 
 elif options == 'Model Metrics':
 
-	st.markdown("<h1 style='text-align: center; color: black;'>Model Metrics</h1>", unsafe_allow_html = True)
+	st.markdown("<h1 style='text-align: center'>Model Metrics</h1>", unsafe_allow_html = True)
 	st.subheader('')
 	
 	col1, col2, col3 = st.columns([1.5, 5.5, 1.5])
