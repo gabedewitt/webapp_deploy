@@ -96,7 +96,7 @@ elif options == 'Model Metrics':
 
 else:
 
-	st.markdown("<h1 style='text-align: center; color: black;'>Predictive Model</h1>", unsafe_allow_html = True)
+	st.markdown("<h1 style='text-align: center'>Predictive Model</h1>", unsafe_allow_html = True)
 	st.subheader('')
 	st.write('This app uses 13 of the 21 inputs to predict whether or not a person has diabetes '
 	'using a model built on the [diabetes_binary_5050split_health_indicators_BRFSS2015.csv](https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset?select=diabetes_binary_5050split_health_indicators_BRFSS2015.csv) dataset. '
