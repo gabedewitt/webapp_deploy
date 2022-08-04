@@ -141,16 +141,13 @@ elif options == 'Dataset Analysis':
 		#					'$35,000 to less than $50,000', '$50,000 to less than $75,000', '$75,000 or more']), 
 		#					title_text = 'Percentage of Income Level by<br> Class')	
 		st.plotly_chart(fig_5)
-	st.markdown("""<p style='text-align: center; color: black;'>
-	
-	- People without diabetes have **BMI** values ​​concentrated mainly between 24-30, while people with prediabetes and diabetes have higher values ​​and concentrated mainly around 26-34 and 27-35, respectively.
+	st.markdown("""<p style='text-align: center'>
 
-	- Without considering the atypical cases, people without diabetes experienced numbers of days less than 5 during the last month in which their physical health was not good (**PhysHlth**). People with prediabetes reported a number of days less than 20, and people with diabetes report a number of days less than 30, most of which correspond to less than 15 days.
+ People without diabetes are mostly in very good, good, and excellent health (**GenHlth**). People with prediabetes mostly indicate that their health is between good, very good and fair. People with diabetes present a state of health mainly between good and fair. The trend is a deterioration of health as the disease manifests.
 
-	- People without diabetes show better mental health (**MentHlth**) during the last month, they indicate a number of days less than 5 in which their mental health was not good. People with diabetes manifested a number of days less than 7 and people with prediabetes are the ones who presented a greater accumulation of days (less than 10), without considering the atypical cases.
+- In relation to the level of education (**Education**), people without diabetes have a more pronounced college graduate level in relation to the other two categories. People with prediabetes and diabetes have similar percentages of people at different levels of education.
 
-	- In relation to age (**Age**), the ages of people without diabetes are mostly concentrated in the category 6-10 (45-69 years), people with prediabetes in the category 7-11 (50-74 years) and people with diabetes in the category 8-11 (55-74 years).</p>""", unsafe_allow_html = True)
-
+- Most people without diabetes are in the income group above $75,000. The distributions are smoother for both the categories of people with prediabetes and people with diabetes.</p>""", unsafe_allow_html = True)	
 
 	col1, col2 = st.columns([4, 4])
 	with col1: 
