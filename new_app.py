@@ -118,30 +118,30 @@ elif options == 'Dataset Analysis':
 	st.markdown("""<p style='text-align: center;'>The study has 253,680 samples, 84% of the people surveyed do not have diabetes, 14% are diabetic and 2% are prediabetic.</p>""", unsafe_allow_html = True)
 	
 	col1, col2 = st.columns([4, 4])
-		with col1: 
-			fig_3 = px.imshow(df, 'Diabetes_012', 'GenHlth')
-			fig_3.update_layout(y_axis = dict(tickmode = 'array', tickvals = [1, 2, 3, 4, 5],
-								ticktext = ['Excellent', 'Very good', 'Good', 'Fair', 'Poor']), 
-						title_text = 'Percentage of GenHlth Level by<br> Class')	
-			st.plotly_chart(fig_3)
-		with col2: 
-			fig_4 = px.imshow(df, 'Diabetes_012', 'Education')
-			fig_4.update_layout(y_axis = dict(tickmode = 'array', tickvals = [1, 2, 3, 4, 5, 6],
-								ticktext = ['Never attended school / kindergarten', 'Elementary', 
-								'Some high school', 'High school graduate', 'Some college or technical school', 
-								'College graduate']), 
-								title_text = 'Percentage of Education Level by<br> Class')	
-			st.plotly_chart(fig_4)
-		col1, col2 = st.columns([2.2, 5.8])
-		with col2:
-			fig_5 = px.imshow(df, 'Income', 'Education')
-			fig_5.update_layout(y_axis = dict(tickmode = 'array', tickvals = [1, 2, 3, 4, 5, 6, 7, 8],
-								ticktext = ['Less than $10,000', '$10,000 to less than $15,000', 
-						'$15,000 to less than $20,000', '$20,000 to less than $25,000', '$25,000 to less than $35,000', 
-						'$35,000 to less than $50,000', '$50,000 to less than $75,000', '$75,000 or more']), 
-								title_text = 'Percentage of Income Level by<br> Class')	
-			st.plotly_chart(fig_5)
-		st.markdown("""<p style='text-align: center; color: black;'>
+	with col1: 
+		fig_3 = px.imshow(df, 'Diabetes_012', 'GenHlth')
+		fig_3.update_layout(y_axis = dict(tickmode = 'array', tickvals = [1, 2, 3, 4, 5],
+							ticktext = ['Excellent', 'Very good', 'Good', 'Fair', 'Poor']), 
+					title_text = 'Percentage of GenHlth Level by<br> Class')	
+		st.plotly_chart(fig_3)
+	with col2: 
+		fig_4 = px.imshow(df, 'Diabetes_012', 'Education')
+		fig_4.update_layout(y_axis = dict(tickmode = 'array', tickvals = [1, 2, 3, 4, 5, 6],
+							ticktext = ['Never attended school / kindergarten', 'Elementary', 
+							'Some high school', 'High school graduate', 'Some college or technical school', 
+							'College graduate']), 
+							title_text = 'Percentage of Education Level by<br> Class')	
+		st.plotly_chart(fig_4)
+	col1, col2 = st.columns([2.2, 5.8])
+	with col2:
+		fig_5 = px.imshow(df, 'Income', 'Education')
+		fig_5.update_layout(y_axis = dict(tickmode = 'array', tickvals = [1, 2, 3, 4, 5, 6, 7, 8],
+							ticktext = ['Less than $10,000', '$10,000 to less than $15,000', 
+					'$15,000 to less than $20,000', '$20,000 to less than $25,000', '$25,000 to less than $35,000', 
+					'$35,000 to less than $50,000', '$50,000 to less than $75,000', '$75,000 or more']), 
+							title_text = 'Percentage of Income Level by<br> Class')	
+		st.plotly_chart(fig_5)
+	st.markdown("""<p style='text-align: center; color: black;'>
 
 	- People without diabetes are mostly in very good, good, and excellent health (**GenHlth**). People with prediabetes mostly indicate that their health is between good, very good and fair. People with diabetes present a state of health mainly between good and fair. The trend is a deterioration of health as the disease manifests.
 
