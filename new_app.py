@@ -39,6 +39,23 @@ def prediction(value, df_pred):
 		result['Diabetes'] = array
 	return result
 
+def to_excel(uploaded_file):
+	df_pred = pd.read_csv(uploaded_file, header = None)
+	df_pred.columns = ['HighBP', 'HighChol', 'CholCheck', 'BMI', 'Smoker', 'Stroke', 'HeartDiseaseorAttack', 
+		           'PhysActivity', 'Fruits', 'Veggies', 'HvyAlcoholConsump', 'AnyHealthcare', 'NoDocbcCost',  
+    		           'GenHlth', 'MentHlth', 'PhysHlth', 'DiffWalk', 'Sex', 'Age', 'Education', 'Income']	   		           
+	df_result = prediction(False, df_pred)
+	output = BytesIO()
+	writer = pd.ExcelWriter(output, engine = 'xlsxwriter')
+	df_result.to_excel(writer, index = False, sheet_name = 'Sheet1')
+	workbook = writer.book
+	worksheet = writer.sheets['Sheet1']
+	format1 = workbook.add_format({'num_format': '0.00'}) 
+	worksheet.set_column('A:A', None, format1)  
+	writer.save()
+	processed_data = output.getvalue()
+	return processed_data
+
 df = load_dataset()
 model = load_model_lgbm()
 config = load_model_config()
