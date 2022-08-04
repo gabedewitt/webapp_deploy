@@ -69,7 +69,8 @@ options = st.sidebar.selectbox('Navigation',
 			       options = ('Home', 'Model Metrics', 'Predictive Model'))
 
 if options == 'Home':
-
+	st.markdown("<h1 style='text-align: center'>Home</h1>", unsafe_allow_html = True)
+	st.subheader('')
 	st.write("""
 
 *"Most of the food you eat is broken down into sugar (also called glucose) and released into your bloodstream. When your blood sugar goes up, it signals your pancreas to release insulin. Insulin acts like a key to let the blood sugar into your body’s cells for use as energy. If you have diabetes, your body either doesn’t make enough insulin or can’t use the insulin it makes as well as it should. When there isn’t enough insulin or cells stop responding to insulin, too much blood sugar stays in your bloodstream. Over time, that can cause serious health problems, such as heart disease, vision loss, and kidney disease." - Centers for Disease Control and Prevention (CDC)*
