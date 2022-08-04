@@ -66,7 +66,7 @@ image = Image.open('./data/diabetes.jpg')
 st.sidebar.image(image, caption = 'Image taken from Hospital de Olhos de Sergipe')
 st.sidebar.subheader('')
 options = st.sidebar.selectbox('Navigation', 
-			       options = ('Home', 'Model Metrics', 'Predictive Model'))
+			       options = ('Home', 'Model Metrics', 'Dataset Analysis', 'Predictive Model'))
 
 if options == 'Home':
 	st.markdown("<h1 style='text-align: center'>Home</h1>", unsafe_allow_html = True)
@@ -106,6 +106,18 @@ elif options == 'Model Metrics':
 		plot_model(model._final_estimator, plot = 'auc', display_format='streamlit', plot_kwargs = {'percent' : True})	
 		plot_model(model._final_estimator, plot = 'feature_all', display_format='streamlit', plot_kwargs = {'percent' : True})
 
+elif options == 'Dataset Analysis':
+	st.markdown("<h1 style='text-align: center;'>Dataset Analysis</h1>", unsafe_allow_html = True)
+	st.subheader('')
+	col1, col2 = st.columns([2.2, 5.8])
+	with col2:	
+		st.write('In this section we used the [diabetes_012_health_indicators_BRFSS2015.csv](https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset?select=diabetes_012_health_indicators_BRFSS2015.csv) file.')	
+		fig_1 = px.histogram(df, x='Diabetes_binary')
+		st.plotly_chart(fig_1)
+	st.markdown("""<p style='text-align: center;'>The study has 253,680 samples, 84% of the people surveyed do not have diabetes, 14% are diabetic and 2% are prediabetic.</p>""", unsafe_allow_html = True)
+	
+	
+		
 else:
 
 	st.markdown("<h1 style='text-align: center'>Predictive Model</h1>", unsafe_allow_html = True)
