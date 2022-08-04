@@ -31,9 +31,9 @@ def prediction(value, df_pred):
 	array = model.predict(df_pred)
 	if value == True:
 		if array[0] == 0:
-			result = 'The person under consideration does not have diabetes'
+			result = 'According to the model, the person in consideration does not have diabetes'
 		else:
-			result = 'The person under consideration has diabetes'
+			result = 'According to the model, the person under consideration has diabetes'
 	else:
 		result = df_pred.copy()
 		result['Diabetes'] = array
@@ -115,7 +115,6 @@ elif options == 'Dataset Analysis':
 		fig_1 = px.histogram(df, x='Diabetes_012')
 		st.plotly_chart(fig_1)
 	st.markdown("""<p style='text-align: center;'>The study has 253,680 samples, 84% of the people surveyed do not have diabetes, 14% are diabetic and 2% are prediabetic.</p>""", unsafe_allow_html = True)
-	
 	
 		
 else:
