@@ -143,7 +143,7 @@ elif options == 'Dataset Analysis':
 		st.plotly_chart(fig_5)
 	st.markdown("""<p style='text-align: center'>
 
- People without diabetes are mostly in very good, good, and excellent health (**GenHlth**). People with prediabetes mostly indicate that their health is between good, very good and fair. People with diabetes present a state of health mainly between good and fair. The trend is a deterioration of health as the disease manifests.
+- People without diabetes are mostly in very good, good, and excellent health (**GenHlth**). People with prediabetes mostly indicate that their health is between good, very good and fair. People with diabetes present a state of health mainly between good and fair. The trend is a deterioration of health as the disease manifests.
 
 - In relation to the level of education (**Education**), people without diabetes have a more pronounced college graduate level in relation to the other two categories. People with prediabetes and diabetes have similar percentages of people at different levels of education.
 
