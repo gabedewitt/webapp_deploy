@@ -12,12 +12,6 @@ from pycaret.datasets import get_data
 st.set_page_config(layout = 'wide')
 plt.style.use('seaborn')
 
-primaryColor="#F63366"
-backgroundColor="#FFFFFF"
-secondaryBackgroundColor="#F0F2F6"
-textColor="#262730"
-font="sans serif"
-
 @st.experimental_memo
 def load_dataset():
 	file_path = './data/diabetes_012_health_indicators_BRFSS2015.csv'
