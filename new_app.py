@@ -124,7 +124,7 @@ elif options == 'Dataset Analysis':
 		fig_7 = px.box(df, y = 'MentHlth', x = 'Diabetes_012')
 		st.plotly_chart(fig_7)
 	with col2:
-		fig_8 = px.box(df, y = 'MentPhysHlthHlth', x = 'Diabetes_012')	
+		fig_8 = px.box(df, y = 'PhysHlth', x = 'Diabetes_012')	
 		st.plotly_chart(fig_8)
 		fig_9 = px.box(df, y = 'Age', x = 'Diabetes_012')				
 		st.plotly_chart(fig_9)
