@@ -120,14 +120,14 @@ elif options == 'Dataset Analysis':
 	col1, col2 = st.columns([4, 4])
 	with col1: 
 		fig_6 = px.box(df, y = 'BMI', x = 'Diabetes_012')
-		st.pyplot(fig_6)		
+		st.plotly_chart(fig_6)		
 		fig_7 = px.box(df, y = 'MentHlth', x = 'Diabetes_012')
-		st.pyplot(fig_7)
+		st.plotly_chart(fig_7)
 	with col2:
 		fig_8 = px.box(df, y = 'MentPhysHlthHlth', x = 'Diabetes_012')	
-		st.pyplot(fig_8)
+		st.plotly_chart(fig_8)
 		fig_9 = px.box(df, y = 'Age', x = 'Diabetes_012')				
-		st.pyplot(fig_9)
+		st.plotly_chart(fig_9)
 	st.markdown("""<p style='text-align: center'>
 	
 - People without diabetes have **BMI** values ​​concentrated mainly between 24-30, while people with prediabetes and diabetes have higher values ​​and concentrated mainly around 26-34 and 27-35, respectively.
