@@ -113,8 +113,31 @@ elif options == 'Dataset Analysis':
 	with col2:	
 		st.write('In this section we used the [diabetes_012_health_indicators_BRFSS2015.csv](https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset?select=diabetes_012_health_indicators_BRFSS2015.csv) file.')	
 		fig_1 = px.histogram(df, x='Diabetes_012')
+		fig_1.update_layout(bargap=0.2)
 		st.plotly_chart(fig_1)
 	st.markdown("""<p style='text-align: center;'>The study has 253,680 samples, 84% of the people surveyed do not have diabetes, 14% are diabetic and 2% are prediabetic.</p>""", unsafe_allow_html = True)
+	
+	col1, col2 = st.columns([4, 4])
+	with col1: 
+		fig_6 = px.boxplot(df, y = 'BMI', x = 'Diabetes_012')
+		st.pyplot(fig_6)		
+		fig_7 = px.boxplot(df, y = 'MentHlth', x = 'Diabetes_012')
+		st.pyplot(fig_7)
+	with col2:
+		fig_8 = px.boxplot(df, y = 'MentPhysHlthHlth', x = 'Diabetes_012')	
+		st.pyplot(fig_8)
+		fig_9 = px.boxplot(df, y = 'Age', x = 'Diabetes_012')				
+		st.pyplot(fig_9)
+	st.markdown("""<p style='text-align: center'>
+	
+- People without diabetes have **BMI** values ​​concentrated mainly between 24-30, while people with prediabetes and diabetes have higher values ​​and concentrated mainly around 26-34 and 27-35, respectively.
+
+- Without considering the atypical cases, people without diabetes experienced numbers of days less than 5 during the last month in which their physical health was not good (**PhysHlth**). People with prediabetes reported a number of days less than 20, and people with diabetes report a number of days less than 30, most of which correspond to less than 15 days.
+
+- People without diabetes show better mental health (**MentHlth**) during the last month, they indicate a number of days less than 5 in which their mental health was not good. People with diabetes manifested a number of days less than 7 and people with prediabetes are the ones who presented a greater accumulation of days (less than 10), without considering the atypical cases.
+
+- In relation to age (**Age**), the ages of people without diabetes are mostly concentrated in the category 6-10 (45-69 years), people with prediabetes in the category 7-11 (50-74 years) and people with diabetes in the category 8-11 (55-74 years).</p>""", unsafe_allow_html = True)
+
 	
 		
 else:
