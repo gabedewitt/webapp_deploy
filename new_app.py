@@ -114,7 +114,7 @@ elif options == 'Dataset Analysis':
 		st.write('In this section we used the [diabetes_012_health_indicators_BRFSS2015.csv](https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset?select=diabetes_012_health_indicators_BRFSS2015.csv) file.')	
 		fig_1 = px.histogram(df, x='Diabetes_012', histnorm='percent')
 		fig_1.update_layout(bargap=0.2)
-		st.plotly_chart(fig_1, use_container_width=True)
+		st.plotly_chart(fig_1)
 	st.markdown("""<p style='text-align: center;'>The study has 253,680 samples, 84% of the people surveyed do not have diabetes, 14% are diabetic and 2% are prediabetic.</p>""", unsafe_allow_html = True)
 	
 	col1, col2 = st.columns([4, 4])
@@ -124,7 +124,7 @@ elif options == 'Dataset Analysis':
 		#fig_3.update_layout(y_axis = dict(tickmode = 'array', tickvals = [1, 2, 3, 4, 5],
 		#					ticktext = ['Excellent', 'Very good', 'Good', 'Fair', 'Poor']), 
 		#					title_text = 'Percentage of GenHlth Level by<br> Class')	
-		st.plotly_chart(fig_3, use_container_width=True)
+		st.plotly_chart(fig_3)
 	with col2: 
 		fig_4 = px.density_heatmap(df, x = 'Diabetes_012', y = 'Education', color_continuous_scale="Viridis",
 		text_auto=True)
@@ -133,7 +133,7 @@ elif options == 'Dataset Analysis':
 		#					'Some high school', 'High school graduate', 'Some college or technical school', 
 		#					'College graduate']), 
 		#					title_text = 'Percentage of Education Level by<br> Class')	
-		st.plotly_chart(fig_4, use_container_width=True)
+		st.plotly_chart(fig_4)
 	col1, col2 = st.columns([2.2, 5.8])
 	with col2:
 		fig_5 = px.density_heatmap(df, x = 'Diabetes_012', y = 'Income', color_continuous_scale="Viridis",
@@ -143,7 +143,7 @@ elif options == 'Dataset Analysis':
 		#					'$15,000 to less than $20,000', '$20,000 to less than $25,000', '$25,000 to less than $35,000', 
 		#					'$35,000 to less than $50,000', '$50,000 to less than $75,000', '$75,000 or more']), 
 		#					title_text = 'Percentage of Income Level by<br> Class')	
-		st.plotly_chart(fig_5, use_container_width=True)
+		st.plotly_chart(fig_5)
 	st.markdown("""<p style='text-align: center'>
 
 - People without diabetes are mostly in very good, good, and excellent health (**GenHlth**). People with prediabetes mostly indicate that their health is between good, very good and fair. People with diabetes present a state of health mainly between good and fair. The trend is a deterioration of health as the disease manifests.
