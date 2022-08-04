@@ -112,7 +112,7 @@ elif options == 'Dataset Analysis':
 	col1, col2 = st.columns([2.2, 5.8])
 	with col2:	
 		st.write('In this section we used the [diabetes_012_health_indicators_BRFSS2015.csv](https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset?select=diabetes_012_health_indicators_BRFSS2015.csv) file.')	
-		fig_1 = px.histogram(df, x='Diabetes_binary')
+		fig_1 = px.histogram(df, x='Diabetes_012')
 		st.plotly_chart(fig_1)
 	st.markdown("""<p style='text-align: center;'>The study has 253,680 samples, 84% of the people surveyed do not have diabetes, 14% are diabetic and 2% are prediabetic.</p>""", unsafe_allow_html = True)
 	
