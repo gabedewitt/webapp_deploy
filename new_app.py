@@ -406,5 +406,5 @@ else:
 		
 	if submit_button:
 		st.write(prediction(True, df_pred))
-		patient_risk_factors(model['classifier'], df_pred)
+		patient_risk_factors(model['trained_model'], df_pred)
 
