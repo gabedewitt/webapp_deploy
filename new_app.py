@@ -407,9 +407,10 @@ else:
 		
 	if submit_button:
 		st.write(prediction(True, df_pred))
+		st.write("These are the influences of each feature in the prediction")
 		transformer = get_config('prep_pipe')
 		observations = transformer.transform(df_pred)
-		st.pyplot(patient_risk_factors(model['trained_model'], observations))
-		st.write("These are the influences of each feature in the prediction")
+		patient_risk_factors(model['trained_model'], observations)
+		st.pyplot()
 
 
