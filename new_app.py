@@ -61,7 +61,7 @@ def to_excel(uploaded_file):
 @st.experimental_memo	
 def patient_risk_factors(_model, p_data):
     # Create object that can calculate shap values
-    explainer = shap.KernelExplainer(_model, p_data)
+    explainer = shap.TreeExplainer(_model)
     shap_values = explainer.shap_values(p_data)
     shap.initjs()
     return shap.force_plot(explainer.expected_value[1], shap_values[1], p_data)
@@ -406,5 +406,5 @@ else:
 		
 	if submit_button:
 		st.write(prediction(True, df_pred))
-		patient_risk_factors(model, df_pred)
+		patient_risk_factors(model['classifier'], df_pred)
 
