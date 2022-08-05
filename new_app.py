@@ -9,7 +9,7 @@ import plotly.graph_objects as go
 from pycaret.classification import *
 from pycaret.classification import load_config
 from pycaret.datasets import get_data
-
+import sklearn
 st.set_page_config(layout = 'wide')
 plt.style.use('seaborn')
 
