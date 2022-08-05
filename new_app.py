@@ -411,7 +411,7 @@ else:
 		
 	if submit_button:
 		st.write(prediction(True, df_pred))
-		st.write("These are the influences of each feature in the prediction")
+		st.write("These are the influences of each feature in the prediction:")
 		transformer = get_config('prep_pipe')
 		observations = transformer.transform(df_pred)
 		st_shap(patient_risk_factors(model['trained_model'], observations))
