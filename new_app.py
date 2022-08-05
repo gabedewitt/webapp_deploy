@@ -410,7 +410,6 @@ else:
 		st.write("These are the influences of each feature in the prediction")
 		transformer = get_config('prep_pipe')
 		observations = transformer.transform(df_pred)
-		shap_plot = patient_risk_factors(model['trained_model'], observations)
-		st.pyplot(shap_plot)
+		st.pyplot(patient_risk_factors(model['trained_model'], observations))
 
 
