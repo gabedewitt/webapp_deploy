@@ -406,7 +406,7 @@ else:
 		
 	if submit_button:
 		st.write(prediction(True, df_pred))
-		transformer = get_config(model)
+		transformer = get_config('prep_pipe')
 		observations = transformer.transform(df_pred)
 		patient_risk_factors(model['trained_model'], observations)
 
