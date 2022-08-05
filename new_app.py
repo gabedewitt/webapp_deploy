@@ -59,9 +59,9 @@ def to_excel(uploaded_file):
 	return processed_data
 
 @st.experimental_memo	
-def patient_risk_factors(model, p_data):
+def patient_risk_factors(_model, p_data):
     # Create object that can calculate shap values
-    explainer = shap.TreeExplainer(model)
+    explainer = shap.TreeExplainer(_model)
     shap_values = explainer.shap_values(p_data)
     shap.initjs()
     return shap.force_plot(explainer.expected_value[1], shap_values[1], p_data)
