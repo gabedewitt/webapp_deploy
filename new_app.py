@@ -406,6 +406,6 @@ else:
 		
 	if submit_button:
 		st.write(prediction(True, df_pred))
-		observations = config.transform(df_pred)
+		observations = model.transform(df_pred)
 		patient_risk_factors(model['trained_model'], observations)
 
