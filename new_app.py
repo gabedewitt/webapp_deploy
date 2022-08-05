@@ -102,7 +102,7 @@ The *Behavioral Risk Factor Surveillance System* (BRFSS) is a health-related tel
 - https://www.cdc.gov/diabetes/basics/diabetes.html
 - https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset
 - [_AGEG5YR see codebook](https://www.cdc.gov/brfss/annual_data/2015/pdf/codebook15_llcp.pdf)""")
-	sklearn.set_config(display="diagram")
+	sklearn.set_config(display="text")
 	st.write("Pipeline of the Pycaret Model")
 	st.write(model)
 
