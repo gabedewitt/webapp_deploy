@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit.components.v1 as components
 import pandas as pd
 import shap
 from io import BytesIO
@@ -65,7 +66,10 @@ def patient_risk_factors(_model, p_data):
     shap_values = explainer.shap_values(p_data)
     shap.initjs()
     return shap.force_plot(explainer.expected_value[1], shap_values[1], p_data)
-	
+
+def st_shap(plot, height=None):
+    shap_html = f"<head>{shap.getjs()}</head><body>{plot.html()}</body>"
+    components.html(shap_html, height=height)	
 
 df = load_dataset()
 model = load_model_lgbm()
@@ -410,6 +414,6 @@ else:
 		st.write("These are the influences of each feature in the prediction")
 		transformer = get_config('prep_pipe')
 		observations = transformer.transform(df_pred)
-		st.pyplot(patient_risk_factors(model['trained_model'], observations))
+		st_shap(patient_risk_factors(model['trained_model'], observations))
 
 
