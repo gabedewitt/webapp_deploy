@@ -3,4 +3,3 @@ streamlit
 plotly
 pycaret
 shap
-streamlit-shap

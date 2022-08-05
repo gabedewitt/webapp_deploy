@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-from streamlit_shap import st_shap
 import shap
 from io import BytesIO
 from PIL import Image
@@ -407,5 +406,5 @@ else:
 		
 	if submit_button:
 		st.write(prediction(True, df_pred))
-		st_shap(patient_risk_factors(model, df_pred))
+		patient_risk_factors(model, df_pred)
 
