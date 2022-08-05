@@ -102,9 +102,6 @@ The *Behavioral Risk Factor Surveillance System* (BRFSS) is a health-related tel
 - https://www.cdc.gov/diabetes/basics/diabetes.html
 - https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset
 - [_AGEG5YR see codebook](https://www.cdc.gov/brfss/annual_data/2015/pdf/codebook15_llcp.pdf)""")
-	sklearn.set_config(display="text")
-	st.write("Pipeline of the Pycaret Model")
-	st.write(model)
 
 
 elif options == 'Model Metrics':
@@ -409,6 +406,6 @@ else:
 		
 	if submit_button:
 		st.write(prediction(True, df_pred))
-		observations = model.transform(df_pred)
+		observations = config.transform(df_pred)
 		patient_risk_factors(model['trained_model'], observations)
 
