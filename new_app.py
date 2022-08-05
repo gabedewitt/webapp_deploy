@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import shap
 from io import BytesIO
 from PIL import Image
 import matplotlib.pyplot as plt
@@ -39,6 +40,7 @@ def prediction(value, df_pred):
 		result['Diabetes'] = array
 	return result
 
+@st.experimental_memo	
 def to_excel(uploaded_file):
 	df_pred = pd.read_csv(uploaded_file, header = None)
 	df_pred.columns = ['HighBP', 'HighChol', 'CholCheck', 'BMI', 'Smoker', 'Stroke', 'HeartDiseaseorAttack', 
@@ -55,6 +57,14 @@ def to_excel(uploaded_file):
 	writer.save()
 	processed_data = output.getvalue()
 	return processed_data
+
+@st.experimental_memo	
+def patient_risk_factors(model, p_data):
+    # Create object that can calculate shap values
+    explainer = shap.TreeExplainer(model)
+    shap_values = explainer.shap_values(p_data)
+    shap.initjs()
+    return shap.force_plot(explainer.expected_value[1], shap_values[1], p_data)
 
 df = load_dataset()
 model = load_model_lgbm()
@@ -396,4 +406,5 @@ else:
 		
 	if submit_button:
 		st.write(prediction(True, df_pred))
+		patient_risk_factors(model, df_pred)
 
