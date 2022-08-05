@@ -64,7 +64,8 @@ def patient_risk_factors(_model, p_data):
     explainer = shap.TreeExplainer(_model)
     shap_values = explainer.shap_values(p_data)
     shap.initjs()
-    return shap.force_plot(explainer.expected_value[1], shap_values[1], p_data)
+    shap.force_plot(explainer.expected_value[1], shap_values[1], p_data)
+	
 
 df = load_dataset()
 model = load_model_lgbm()
@@ -409,4 +410,6 @@ else:
 		transformer = get_config('prep_pipe')
 		observations = transformer.transform(df_pred)
 		patient_risk_factors(model['trained_model'], observations)
+		st.write("These are the influences of each feature in the prediction")
+
 
