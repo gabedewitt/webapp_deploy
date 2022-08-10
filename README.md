@@ -1,6 +1,6 @@
 # Deploy de WebApp de Predição de pessoas com diabetes
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg&logoColor=red)](https://gabedewitt-webapp-deploy-new-app-n93vy4.streamlitapp.com/)
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_red.svg)](https://gabedewitt-webapp-deploy-new-app-n93vy4.streamlitapp.com/)
 ![Python](https://img.shields.io/badge/Python-black?style=flat-square&logo=Python&logoColor=blue)
 
 Este projeto foi desenvolvido na segunda edição do Stack Labs, da Stack Tecnologias, em que squads de alunos da plataforma da Stack se reuniram para desenvolver projetos de ciência e engenharia de dados a fim de exercitar os conhecimentos adquiridos nos cursos da Stack Tecnologias em um projeto prático utilizando dados de pacientes com diabetes disponíveis no site ![Kaggle](https://www.kaggle.com/alexteboul/diabetes-health-indicators-dataset).
